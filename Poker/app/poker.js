@@ -329,17 +329,6 @@ function who_wins(poker_list1, poker_list2){
     }
 }
 
-// console.log(get_poker_type("3D 5S 9C KD 2H"));
-// console.log(get_poker_type("3D 3S 9C KD 2H"));
-// console.log(get_poker_type("3D 3S 9C 9D 2H"));
-// console.log(get_poker_type("3D 3S 3C 9D 2H"));
-// console.log(get_poker_type("3D 4S 5C 6D 7H"));
-// console.log(get_poker_type("3D 5D 9D KD 2D"));
-// console.log(get_poker_type("3D 3S 3C 2D 2H"));
-// console.log(get_poker_type("3D 3S 3C 2D 3H"));
-// console.log(get_poker_type("9D TD JD QD KD"));
-
-
 
 function get_poker_type_test(poker_list){
     var number_list = get_number_list(poker_list);
