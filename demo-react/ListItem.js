@@ -13,9 +13,9 @@ class ListItem extends Component{
     render(){
         const item = this.props.item;
         if(item.done){
-            return <p onClick={this.doIt} className="done-item">{item.content}</p>
+            return <p onClick={this.doIt} id={item.content} className="done-item">{item.content}</p>
         }else{
-            return <p onClick={this.doIt} className="item">{item.content}</p>
+            return <p onClick={this.doIt} id={item.content} className="item">{item.content}</p>
         }
     }
 }

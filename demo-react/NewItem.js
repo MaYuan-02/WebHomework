@@ -24,8 +24,8 @@ class NewItem extends Component{
     render(){
         return(
             <div>
-                <input value={this.state.inputContent} onChange = {this.onInputChange}></input>
-                <button onClick = {this.onAddBtnClick}>Add</button>
+                <input id='newItemText' value={this.state.inputContent} onChange = {this.onInputChange}></input>
+                <button id='addItem' onClick = {this.onAddBtnClick}>Add</button>
             </div>
         )
     }
