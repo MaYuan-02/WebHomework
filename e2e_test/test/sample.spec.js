@@ -28,14 +28,34 @@ describe('add todo', function () {
     })
 
     it('test add', async function(){
-      await page.type('#newItemText','test context',{dalay:500});
+      await page.type('#newItemText','testContext',{dalay:500});
       await page.click('#addItem',{delay:500});
       let todoList = await page.waitFor('#todoList');
-      const realText = await page.evaluate(function(todoList){
+      let realText = await page.evaluate(function(todoList){
         return todoList.lastChild.textContent;
       },todoList);
-      expect(realText).to.eql('test context');
+      expect(realText).to.eql('testContext');
     })
+
+    it('do it', async function(){
+      await page.click('#testContext', {delay:500});
+      let todoList = await page.waitFor('#todoList');
+      const realStatus = await page.evaluate(function(todoList){
+        return todoList.lastChild.className;
+      },todoList)
+      expect(realStatus).to.eql('done-item');
+    })
+
+    it('undo it', async function(){
+      await page.click('#testContext', {delay:500});
+      let todoList = await page.waitFor('#todoList');
+      const realStatus = await page.evaluate(function(todoList){
+        return todoList.lastChild.className;
+      },todoList)
+      expect(realStatus).to.eql('item');
+    })
+
+
     // it('should new todo correct', async function() {
     //   await page.click('#new-todo', {delay: 500});
     //   await page.type('#new-todo', 'new todo item', {delay: 50});
